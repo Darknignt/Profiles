@@ -1,5 +1,6 @@
 # > emby
+DOMAIN-KEYWORD,emby,Emby
 DOMAIN-SUFFIX,plusmedia.site,Emby
 DOMAIN-SUFFIX,xeton.dev,Emby
 DOMAIN-SUFFIX,jmsooo.com,Emby
-DOMAIN-KEYWORD,emby,Emby
+DOMAIN-SUFFIX,mb3admin.com,Emby
