@@ -5,4 +5,3 @@ DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tidalhifi.com
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,facebook.com
-IP-CIDR,255.255.255.0/24,no-resolve
