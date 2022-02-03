@@ -1,9 +1,0 @@
-# > emby
-DOMAIN-KEYWORD,emby,Emby
-DOMAIN-SUFFIX,plusmedia.site,Emby
-DOMAIN-SUFFIX,xeton.dev,Emby
-DOMAIN-SUFFIX,odysseyplus.site,Emby
-DOMAIN-SUFFIX,otakudrive.life,Emby
-DOMAIN-SUFFIX,flowercloud.yt,Emby
-DOMAIN-SUFFIX,emby.si,Emby
-IP-CIDR,38.94.109.0/24,Emby
