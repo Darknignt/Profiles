@@ -1,5 +1,6 @@
 # 内容：TIDAL
 USER-AGENT,TIDAL*
+PROCESS-NAME,com.aspiro.tidal
 DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
 DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tidalhifi.com
