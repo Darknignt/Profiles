@@ -1,3 +1,3 @@
 # > Speedtest
-USER-AGENT,SpeedTest*,Speedtest
-DOMAIN-KEYWORD,speedtest,Speedtest
+USER-AGENT,SpeedTest*
+DOMAIN-KEYWORD,speedtest
