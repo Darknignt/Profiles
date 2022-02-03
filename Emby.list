@@ -6,4 +6,4 @@ DOMAIN-SUFFIX,odysseyplus.site
 DOMAIN-SUFFIX,otakudrive.life
 DOMAIN-SUFFIX,flowercloud.yt
 DOMAIN-SUFFIX,emby.si
-IP-CIDR,38.94.109.0/24
+IP-CIDR,38.94.109.0/24,no-resolve
