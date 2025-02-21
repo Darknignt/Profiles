@@ -260,20 +260,14 @@ DOMAIN-SUFFIX,imetyou.top
 
 # 普拉斯影业
 DOMAIN-SUFFIX,embyserver.ga
-DOMAIN-SUFFIX,emby.plusmedia.site
-DOMAIN-SUFFIX,emby-cf.plusmedia.site
-DOMAIN-SUFFIX,emby-sg.plusmedia.site
-DOMAIN-SUFFIX,jellyfin.xeton.dev
-DOMAIN-SUFFIX,movie.xeton.dev
-DOMAIN-SUFFIX,servers.xeton.dev
+DOMAIN-SUFFIX,plusmedia.site
 
 ##### Q #####
 
 ##### R #####
 
 # 忍者云Emby
-DOMAIN-SUFFIX,emby1.medi4.org
-DOMAIN-SUFFIX,emby2.medi4.org
+DOMAIN-SUFFIX,medi4.org
 
 # Robo
 DOMAIN-SUFFIX,91ai.de
@@ -286,8 +280,7 @@ DOMAIN-SUFFIX,stream.ntrrr.top
 
 # 私房菜Emby
 DOMAIN,notnetflix.cos.cat
-DOMAIN,cminf.sfcat.link
-DOMAIN,cuinf.sfcat.link
+DOMAIN-SUFFIX,sfcat.link
 
 # 守候网络Emby
 DOMAIN-SUFFIX,emby.cn2gias.uk
@@ -346,14 +339,9 @@ DOMAIN-SUFFIX,embymv.link
 
 # 熊猫
 DOMAIN-SUFFIX,embyclub.com
-DOMAIN-SUFFIX,az-hk.embyclub.com
-DOMAIN-SUFFIX,azsgp.embyclub.com
 
 # xeton
-DOMAIN-SUFFIX,emby.xeton.dev
-DOMAIN-SUFFIX,jellyfin.xeton.dev
-DOMAIN-SUFFIX,movie.xeton.dev
-DOMAIN-SUFFIX,servers.xeton.dev
+DOMAIN-SUFFIX,xeton.dev
 
 ##### Y #####
 
@@ -364,15 +352,6 @@ DOMAIN-SUFFIX,emby.ytoo.li
 
 # ZDZ(Terminus)
 DOMAIN-SUFFIX,emby.wtf
-DOMAIN-SUFFIX,pub1.emby.wtf
-DOMAIN-SUFFIX,pub2.emby.wtf
-DOMAIN-SUFFIX,pub3.emby.wtf
-DOMAIN-SUFFIX,pub1cf.emby.wtf
-DOMAIN-SUFFIX,pub2cf.emby.wtf
-DOMAIN-SUFFIX,pub3cf.emby.wtf
-DOMAIN-SUFFIX,pub1back.emby.wtf
-DOMAIN-SUFFIX,pub2back.emby.wtf
-DOMAIN-SUFFIX,pub3back.emby.wtf
 
 # 纸片人
 DOMAIN-SUFFIX,9521732.xyz
