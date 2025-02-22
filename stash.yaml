@@ -1,16 +1,16 @@
 proxy-providers:
   Star:
     interval: 600
-    url: 1
+    url: http://your-service-provider
   YTOO:
     interval: 600
-    url: 1
+    url: http://your-service-provider
   STC:
     interval: 600
-    url: 1
+    url: http://your-service-provider
   SF:
     interval: 600
-    url: 1
+    url: http://your-service-provider
 mode: rule
 dns:
   enable: true
