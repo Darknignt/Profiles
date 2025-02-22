@@ -87,7 +87,7 @@ proxy-groups:
       - YTOO
     filter: "(?i)(美|🇺🇲|us|states|america|新加坡|坡|狮|🇸🇬|sg|singapore)"
   - name: 影院
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeTV.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
     type: select
     proxies:
       - 代理
@@ -159,7 +159,7 @@ proxy-groups:
       - STC
       - YTOO
   - name: YTOO
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Ytoo.png
     type: url-test
     use:
       - YTOO
@@ -167,7 +167,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
   - name: Star
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Star_1.png
     type: url-test
     use:
       - Star
@@ -175,7 +175,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
   - name: STC
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/STC.png
     type: url-test
     use:
       - STC
@@ -183,7 +183,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
   - name: SF
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSlinks.png
     type: url-test
     use:
       - SF
