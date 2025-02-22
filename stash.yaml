@@ -194,9 +194,9 @@ proxy-groups:
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: select
     proxies:
-      - YTOO
       - Star
       - STC
+      - YTOO
       - SF
 
 rules:
