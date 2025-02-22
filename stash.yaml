@@ -12,8 +12,6 @@ proxy-providers:
     interval: 600
     url: 1
 mode: rule
-log-level: info
-
 dns:
   enable: true
   ipv6: true
@@ -67,7 +65,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america)"
-    name: 学术
+  - name: 学术
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png
     type: select
     proxies:
@@ -78,7 +76,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(美|🇺🇲|us|states|america|新加坡|坡|狮|🇸🇬|sg|singapore)"
-    name: 影院
+  - name: 影院
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeTV.png
     type: select
     proxies:
@@ -89,7 +87,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|台|🇹🇼|湾|tw|taiwan|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america|韩|🇰🇷|kr|korea)"
-    name: 天籁
+  - name: 天籁
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
     type: select
     proxies:
@@ -100,7 +98,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america)"
-    name: 微软
+  - name: 微软
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Windows.png
     type: select
     proxies:
@@ -111,7 +109,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america|韩|🇰🇷|kr|korea)"
-    name: 苹果
+  - name: 苹果
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
     type: select
     proxies:
@@ -122,7 +120,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(美|🇺🇲|us|states|america)"
-    name: 内娱
+  - name: 内娱
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
     type: select
     proxies:
@@ -133,7 +131,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: "(?i)(澳门|🇲🇴|港|🇭🇰|hk|hong|台|🇹🇼|湾|tw|taiwan)"
-    name: 未定
+  - name: 未定
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png
     type: select
     proxies:
@@ -151,7 +149,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: (?i)^(?!.*(?::|：)).*
-    name: YTOO
+  - name: YTOO1
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -160,7 +158,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-    name: Star
+  - name: Star1
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -169,7 +167,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-    name: STC
+  - name: STC1
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -178,7 +176,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-    name: SF
+  - name: SF1
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -187,14 +185,14 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-    name: Auto
+  - name: Auto
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
-	type: select
+    type: select
     proxies:
-      - YTOO
-      - Star
-      - STC
-      - SF
+      - YTOO1
+      - Star1
+      - STC1
+      - SF1
 
 rules:
   - SCRIPT,quic,REJECT
