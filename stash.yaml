@@ -158,7 +158,7 @@ proxy-groups:
       - STC
       - YTOO
     filter: (?i)^(?!.*(?::|：)).*
-  - name: YTOO1
+  - name: YTOO
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -167,7 +167,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-  - name: Star1
+  - name: Star
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -176,7 +176,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-  - name: STC1
+  - name: STC
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
@@ -185,7 +185,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     filter: (?i)^(?!.*(?::|：)).*
-  - name: SF1
+  - name: SF
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
     use:
