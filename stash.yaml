@@ -1,21 +1,368 @@
-ruleset=🎯 全球直连,rules/ACL4SSR/Clash/LocalAreaNetwork.list
-ruleset=🛑 全球拦截,rules/ACL4SSR/Clash/BanAD.list
-ruleset=🛑 全球拦截,rules/ACL4SSR/Clash/BanProgramAD.list
-ruleset=🎯 全球直连,rules/ACL4SSR/Clash/GoogleCN.list
-ruleset=🎯 全球直连,rules/ACL4SSR/Clash/Ruleset/SteamCN.list
-ruleset=🚀 节点选择,rules/ACL4SSR/Clash/Telegram.list
-ruleset=🚀 节点选择,rules/ACL4SSR/Clash/ProxyMedia.list
-ruleset=🚀 节点选择,rules/ACL4SSR/Clash/ProxyLite.list
-ruleset=🎯 全球直连,rules/ACL4SSR/Clash/ChinaDomain.list
-ruleset=🎯 全球直连,rules/ACL4SSR/Clash/ChinaCompanyIp.list
-ruleset=🎯 全球直连,[]GEOIP,CN
-ruleset=🐟 漏网之鱼,[]FINAL
+proxy-providers:
+  Star:
+    interval: 600
+    url: 1
+  YTOO:
+    interval: 600
+    url: 1
+  STC:
+    interval: 600
+    url: 1
+  SF:
+    interval: 600
+    url: 1
+mode: rule
+log-level: info
 
-custom_proxy_group=🚀 节点选择`select`[]♻️ 自动选择`[]DIRECT`.*
-custom_proxy_group=🎯 全球直连`select`[]DIRECT`[]🚀 节点选择`[]♻️ 自动选择
-custom_proxy_group=🛑 全球拦截`select`[]REJECT`[]DIRECT
-custom_proxy_group=🐟 漏网之鱼`select`[]🚀 节点选择`[]🎯 全球直连`[]♻️ 自动选择`.*
-custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,,50
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.xboxlive.com'
+    - 'msftconnecttest.com'
+    - 'xbox.*.microsoft.com'
+    - '*.battlenet.com.cn'
+    - '*.battlenet.com'
+    - '*.blzstatic.cn'
+    - '*.battle.net'
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://120.53.53.53/dns-query
+  fallback:
+    - https://8.8.4.4/dns-query
+    - https://1.0.0.1/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
 
-enable_rule_generator=true
-overwrite_original_rules=true
+proxy-groups:
+  - name: 代理
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TestFlight.png
+    type: select
+    proxies:
+      - DIRECT
+      - Auto
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: (?i)^(?!.*(?::|：)).*
+
+    # 功能分组
+    
+  - name: 电报
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Telegram.png
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america)"
+    name: 学术
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(美|🇺🇲|us|states|america|新加坡|坡|狮|🇸🇬|sg|singapore)"
+    name: 影院
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeTV.png
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|台|🇹🇼|湾|tw|taiwan|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america|韩|🇰🇷|kr|korea)"
+    name: 天籁
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america)"
+    name: 微软
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Windows.png
+    type: select
+    proxies:
+      - DIRECT
+      - 代理
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(新加坡|坡|狮|🇸🇬|sg|singapore|港|🇭🇰|hk|hong|日|🇯🇵|东京|大阪|jp|japan|美|🇺🇲|us|states|america|韩|🇰🇷|kr|korea)"
+    name: 苹果
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
+    type: select
+    proxies:
+      - DIRECT
+      - 代理
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(美|🇺🇲|us|states|america)"
+    name: 内娱
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
+    type: select
+    proxies:
+      - DIRECT
+      - 代理
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: "(?i)(澳门|🇲🇴|港|🇭🇰|hk|hong|台|🇹🇼|湾|tw|taiwan)"
+    name: 未定
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png
+    type: select
+    proxies:
+      - 代理
+      - DIRECT
+      - 电报
+      - 学术
+      - 影院
+      - 天籁
+      - 微软
+      - 苹果
+      - 内娱
+    use:
+      - Star
+      - STC
+      - YTOO
+    filter: (?i)^(?!.*(?::|：)).*
+    name: YTOO
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    type: url-test
+    use:
+      - YTOO
+    interval: 120
+    tolerance: 50
+    lazy: true
+    filter: (?i)^(?!.*(?::|：)).*
+    name: Star
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    type: url-test
+    use:
+      - Star
+    interval: 120
+    tolerance: 50
+    lazy: true
+    filter: (?i)^(?!.*(?::|：)).*
+    name: STC
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    type: url-test
+    use:
+      - STC
+    interval: 120
+    tolerance: 50
+    lazy: true
+    filter: (?i)^(?!.*(?::|：)).*
+    name: SF
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    type: url-test
+    use:
+      - SF
+    interval: 120
+    tolerance: 50
+    lazy: true
+    filter: (?i)^(?!.*(?::|：)).*
+    name: Auto
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+	type: select
+    proxies:
+      - YTOO
+      - Star
+      - STC
+      - SF
+
+rules:
+  - SCRIPT,quic,REJECT
+  - RULE-SET,banvideoad,REJECT
+  - RULE-SET,banad,REJECT
+  - RULE-SET,banprivacy,REJECT
+  - RULE-SET,download,DIRECT
+  - RULE-SET,ai,学术
+  - RULE-SET,scholar,学术
+  - RULE-SET,microsoft,微软
+  - RULE-SET,appleproxy,苹果
+  - RULE-SET,apple,苹果
+  - RULE-SET,telegram,电报
+  - RULE-SET,emby,影院
+  - RULE-SET,spotify,天籁
+  - RULE-SET,youtube,影院
+  - RULE-SET,netflix,影院
+  - RULE-SET,bahamut,影院
+  - RULE-SET,tiktok,天籁
+  - RULE-SET,instagram,影院
+  - RULE-SET,twitter,影院
+  - RULE-SET,facebook,影院
+  - RULE-SET,biliintl,内娱
+  - RULE-SET,bilibili,内娱
+  - RULE-SET,speedtest,内娱
+  - RULE-SET,proxymedia,代理
+  - RULE-SET,proxygfw,代理
+  - RULE-SET,mainland,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,未定
+
+rule-providers:
+  banvideoad:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/Ads_Dlerio.list
+  banad:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/Anti-ad.list
+  banprivacy:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/Ads_EasyListPrivacy.list
+  download:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/Download.list
+  ai:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/AI.list
+  scholar:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/scholar-domain-set.yaml
+  microsoft:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/microsoft-classical-set.yaml
+  appleproxy:
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/AppleProxyService.list
+  apple:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/apple-classical-set.yaml
+  telegram:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/telegram-classical-set.yaml
+  emby:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/Darknignt/Profiles/refs/heads/master/rules/Emby.list
+  youtube:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/youtube-classical-set.yaml
+  netflix:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/netflix-classical-set.yaml
+  bahamut:
+    interval: 86400
+    behavior: domain
+    format: yaml
+    url: https://clashios.app/static/rules/bahamut-domain-set.yaml
+  proxymedia:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/ProxyMedia.list
+  spotify:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/spotify-classical-set.yaml
+  tiktok:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/tiktok-classical-set.yaml
+  instagram:
+    interval: 86400
+    behavior: domain
+    format: yaml
+    url: https://clashios.app/static/rules/instagram-domain-set.yaml
+  twitter:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/twitter-classical-set.yaml
+  facebook:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/facebook-classical-set.yaml
+  biliintl:
+    interval: 86400
+    behavior: classical
+    format: yaml
+    url: https://clashios.app/static/rules/bilibiliintl-classical-set.yaml	
+  bilibili:
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://clashios.app/static/rules/bilibili-classical-set.yaml
+  speedtest:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/Darknignt/Profiles/refs/heads/master/rules/Speedtest.list
+  mainland:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/ChinaDomain.list
+  proxygfw:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Stash/Rules/ProxyGFW.list
+
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
