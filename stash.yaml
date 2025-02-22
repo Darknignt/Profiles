@@ -1,16 +1,20 @@
 proxy-providers:
   Star:
-    interval: 600
+    interval: 86400
     url: http://your-service-provider
+    filter: (?i)^(?!.*(?::|：)).*
   YTOO:
-    interval: 600
+    interval: 86400
     url: http://your-service-provider
+    filter: (?i)^(?!.*(?::|：)).*
   STC:
-    interval: 600
+    interval: 86400
     url: http://your-service-provider
+    filter: (?i)^(?!.*(?::|：)).*
   SF:
-    interval: 600
+    interval: 86400
     url: http://your-service-provider
+    filter: (?i)^(?!.*(?::|：)).*
 mode: rule
 dns:
   enable: true
@@ -59,10 +63,7 @@ proxy-groups:
       - Star
       - STC
       - YTOO
-    filter: (?i)^(?!.*(?::|：)).*
-
     # 功能分组
-    
   - name: 电报
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Telegram.png
     type: select
@@ -157,7 +158,6 @@ proxy-groups:
       - Star
       - STC
       - YTOO
-    filter: (?i)^(?!.*(?::|：)).*
   - name: YTOO
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
@@ -166,7 +166,6 @@ proxy-groups:
     interval: 120
     tolerance: 50
     lazy: true
-    filter: (?i)^(?!.*(?::|：)).*
   - name: Star
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
@@ -175,7 +174,6 @@ proxy-groups:
     interval: 120
     tolerance: 50
     lazy: true
-    filter: (?i)^(?!.*(?::|：)).*
   - name: STC
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
@@ -184,7 +182,6 @@ proxy-groups:
     interval: 120
     tolerance: 50
     lazy: true
-    filter: (?i)^(?!.*(?::|：)).*
   - name: SF
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: url-test
@@ -193,15 +190,14 @@ proxy-groups:
     interval: 120
     tolerance: 50
     lazy: true
-    filter: (?i)^(?!.*(?::|：)).*
   - name: Auto
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
     type: select
     proxies:
-      - YTOO1
-      - Star1
-      - STC1
-      - SF1
+      - YTOO
+      - Star
+      - STC
+      - SF
 
 rules:
   - SCRIPT,quic,REJECT
