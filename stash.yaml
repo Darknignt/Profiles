@@ -11,10 +11,6 @@ proxy-providers:
     interval: 86400
     url: http://your-service-provider
     filter: (?i)^(?!.*(?::|：)).*
-  SF:
-    interval: 86400
-    url: http://your-service-provider
-    filter: (?i)^(?!.*(?::|：)).*
 mode: rule
 dns:
   enable: true
@@ -182,11 +178,6 @@ proxy-groups:
     interval: 120
     tolerance: 50
     lazy: true
-  - name: SF
-    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSlinks.png
-    type: url-test
-    use:
-      - SF
     interval: 120
     tolerance: 50
     lazy: true
@@ -197,7 +188,6 @@ proxy-groups:
       - Star
       - STC
       - YTOO
-      - SF
 
 rules:
   - SCRIPT,quic,REJECT
